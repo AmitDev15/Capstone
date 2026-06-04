@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: sandbox-service
+spec:
+  selector:
+    app: sandbox
+  type: ClusterIP
+  ports:
+    - name: main-sandbox
+      port: 80
+      targetPort: 3000
+      # nodePort: 3000 # Uncomment this line if you want to expose the service on a specific port on the node like http://localhost:3000
